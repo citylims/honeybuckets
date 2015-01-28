@@ -11,19 +11,19 @@
 <%= form_for [@location, @review] do |r| %>
 	<%= r.label :review %><br>
 	<%= r.text_field :body %><br>
-	<!-- <span class="star-cb-group"> -->
-	<%= r.radio_button :rating, 1, {class: "test"} %>
-	<%= r.radio_button :rating, 2, {class: "test"}  %>
-	<%= r.radio_button :rating, 3, {class: "test"}  %>
-	<%= r.radio_button :rating, 4, {class: "test"}  %>
-	<%= r.radio_button :rating, 5, {class: "test"}  %> 
+	<span class="rating">
+	<%= r.radio_button :rating, 1, {class: "rating"}  %>
+	<%= r.radio_button :rating, 2, {class: "rating"}  %>
+	<%= r.radio_button :rating, 3, {class: "rating"}  %>
+	<%= r.radio_button :rating, 4, {class: "rating"}  %>
+	<%= r.radio_button :rating, 5, {class: "rating"}  %> 
 	</span>
 	<br>
 	<%= r.submit %>
 <% end %>
 
 
-<ul>
+<ul class="reviews">
  <% @reviews.each do |review| %>
  	<li><%= review.body %></li>
  	<li><%= review.rating %></li>

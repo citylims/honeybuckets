@@ -1,0 +1,26 @@
+.login {
+	float: right; 
+}
+
+#user_nav {
+	background: #909090;
+	font-family: Ubuntu;
+	font-size: 20px;
+	padding: .7em;
+}
+
+.left_nav {
+	padding-right: .5em;
+}
+
+.reviews {
+	list-style-type: none;
+	font-family: Ubuntu;
+	font-size: 15px;
+	border: 10px 10px 10px 10px;
+}
+
+
+
+
+
