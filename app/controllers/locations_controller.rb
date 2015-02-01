@@ -2,10 +2,9 @@ class LocationsController < ApplicationController
   protect_from_forgery
 
   def home
-    @honey_embed = []
     honey = twitter_client.search("#honeybuckets").take(3) #<- tweets at a time
-    honey.each do |tweet|
-      @honey_embed << twitter_client.oembed(tweet.id, options = {:hide_media => true, :hide_thread => true})
+    @honey_embed = honey.map do |tweet|
+      twitter_client.oembed(tweet.id, option = {:hide_media => true, :hide_thread => true})
     end
   end
 
@@ -49,10 +48,9 @@ class LocationsController < ApplicationController
         }
     end
 
-    @honey_embed = []
     honey = twitter_client.search("Washington D.C.").take(6) #<-tweets at a time
-    honey.each do |tweet|
-      @honey_embed << twitter_client.oembed(tweet.id, options = {:hide_media => true, :hide_thread => true})
+    @honey_embed = honey.map do |tweet|
+      twitter_client.oembed(tweet.id, options = {:hide_media => true, :hide_thread => true})
     end
 
     respond_to do |format|
