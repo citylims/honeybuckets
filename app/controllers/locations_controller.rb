@@ -2,7 +2,7 @@ class LocationsController < ApplicationController
   protect_from_forgery
 
   def home
-    honey = twitter_client.search("#honeybuckets").take(3) # <- tweets at a time
+    honey = twitter_client.search('#honeybuckets').take(3) # <- tweets at a time
     @honey_embed = honey.map do |tweet|
       twitter_client.oembed(tweet.id, option = { hide_media: :true, hide_thread: :true })
     end
@@ -11,12 +11,12 @@ class LocationsController < ApplicationController
   def map
     @geojson = { locations: []}
 
-    if params[:search] && params[:search] != ""
+    if params[:search] && params[:search] != ''
       @search = params[:search]
-      @coordinates = Geocoder.search(@search)[0].data["geometry"]["location"]
+      @coordinates = Geocoder.search(@search)[0].data['geometry']['location']
       @geojson[:search] = {
-        latitude: @coordinates["lat"],
-        longitude: @coordinates["lng"]
+        latitude: @coordinates['lat'],
+        longitude: @coordinates['lng']
       }
     else
       @search = false
@@ -48,7 +48,7 @@ class LocationsController < ApplicationController
         }
     end
 
-    honey = twitter_client.search("Washington D.C.").take(6) # <-tweets at a time
+    honey = twitter_client.search('Washington D.C.').take(6) # <-tweets at a time
     @honey_embed = honey.map do |tweet|
       twitter_client.oembed(tweet.id, options = { hide_media: :true, hide_thread: :true })
     end
@@ -86,7 +86,7 @@ class LocationsController < ApplicationController
     if current_user
       @user = User.find(session[:user_id])
     else
-      @user = User.new(name: "guest")
+      @user = User.new(name: 'guest')
     end
 
     respond_to do |format|
@@ -102,12 +102,12 @@ class LocationsController < ApplicationController
 
   def create
     @location = Location.new(location_params)
-    @address_components = Geocoder.search("#{@location.lat}, #{@location.long}")[0].data["address_components"]
-    @street_num = @address_components[0]["long_name"]
-    @street = @address_components[1]["long_name"]
+    @address_components = Geocoder.search("#{@location.lat}, #{@location.long}")[0].data['address_components']
+    @street_num = @address_components[0]['long_name']
+    @street = @address_components[1]['long_name']
     @location.address = @street_num + " " + @street
     if @location.name == nil
-      flash[:notice]="You must input a name for your new location!"
+      flash[:notice]= "You must input a name for your new location!"
       redirect_to(:back)
     else
     @location.save
