@@ -115,7 +115,7 @@ class LocationsController < ApplicationController
 
     respond_to do |format|
       format.html
-      format.json { render :json => {location: location_path(@location)} }
+      format.json { render :json => { location: location_path(@location) } }
     end
   end
 
