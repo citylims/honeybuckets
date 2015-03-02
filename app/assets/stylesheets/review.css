@@ -1,5 +1,3 @@
-
-
 .show-page {
 	background: #E7FDFF;
 }
@@ -12,19 +10,17 @@
 	clear: both;
 	height: 0;
 	}
-* html .clearfix             { zoom: 1; } /* IE6 */
-*:first-child+html .clearfix { zoom: 1; } /* IE7 */
 
 .whole-body {
 	width: 1100px;
 	margin: 0 auto;
 }
+
 .left-body {
 	width: 350px;
 	padding-left: 50px;
 	padding-right: 10px;
 	margin-top: 30px;
-	/*position: relative;*/
 	float: left;
 }
 
@@ -37,7 +33,6 @@
 
 #map.review-map {
 	position: relative;
-	/*right: 500px;*/
 	height: 500px;
 	width: 400px;
 	border: 1px solid black;
@@ -55,36 +50,28 @@
 	width: 400px;
 	height: 300px;
 	padding: 20px;
-	/*box-sizing: border-box;*/
 }
 
-
 .wrap {
-    -webkit-border-radius: 4px;
-    -webkit-box-shadow: 0 2px 3px rgba(0, 0, 0, 0.1);
-    -moz-box-shadow: 0 2px 3px rgba(0, 0, 0, 0.1);
-    box-shadow: 0 2px 3px rgba(0, 0, 0, 0.1);
-    display: -moz-inline-box;
-    -moz-box-orient: vertical;
-    display: inline-block;
-    width: 300px;
-    background: white;
-    border: 1px solid #CCC;
-    margin: 3px auto;
-    position: relative;
-    padding: 8px;
-
+  -webkit-border-radius: 4px;
+  -webkit-box-shadow: 0 2px 3px rgba(0, 0, 0, 0.1);
+  -moz-box-shadow: 0 2px 3px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px 3px rgba(0, 0, 0, 0.1);
+  display: -moz-inline-box;
+  -moz-box-orient: vertical;
+  display: inline-block;
+  width: 300px;
+  background: white;
+  border: 1px solid #CCC;
+  margin: 3px auto;
+  position: relative;
+  padding: 8px;
 }
 
 .wrap p {
 	font-size: 20px;
 	color: black;
 }
-
-
-.left-body h3 {
-}
-
 
 .right-body {
 	width: 500px;

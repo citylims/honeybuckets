@@ -7,7 +7,6 @@ div#map.home-map {
 	width: 100%;
 }
 
-
 .slider {
 	clear:both;
 	position: absolute;
@@ -33,7 +32,6 @@ div#map.home-map {
   background: white;
   color: black;
   border-radius: 5%;
-  /*box-shadow: 2px 2px 0px 2px gray;*/
 }
 
 .leaflet-popup-content a {
